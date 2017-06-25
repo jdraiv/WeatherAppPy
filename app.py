@@ -1,8 +1,8 @@
 import requests
+import helpers
 
 from flask import Flask, render_template
 app = Flask(__name__)
-import helpers
 
 @app.route('/')
 def homepage(data = None):
@@ -16,7 +16,6 @@ def homepage(data = None):
 
 	weather_data = weather_api_url.json()
 	d = helpers.get_weather_data(weather_data)
-	print(d)
 
 	return render_template('home.html', data = d)
 
