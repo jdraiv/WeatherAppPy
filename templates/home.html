@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Weather</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Jquery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+        <!-- Css -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/home.css') }}">
+
+
+    </head>
+
+    <body>
+        <div class="data-container">
+
+            <div class="moon-sun"></div>
+            
+
+            <h1 id="region">{{ data['name']}}, {{ data['country'] }}</h1>
+            <h1 id="date-time">{{ data['localtime'] }}</h1>
+            <h1 id="condition">{{ data['text'] }}</h1>
+
+            <div class="btns-container">
+            <!-- Style buttons -->
+                <button id="temp-c" class="temp-btns">C°</button>
+                <button id="temp-f" class="temp-btns">F°</button>
+
+            </div>
+            <h1 id="temp">{{ data['temp_c'] }}</h1>
+
+            <h1 class="extra-data" id="humidity">Precipitation: {{ data['humidity'] }}</h1>
+            <h1 class="extra-data" id="winds">Winds KPH: {{ data['wind_kph'] }}</h1>
+
+        </div>
+        <script src="{{url_for('static', filename='js/change-temp.js')}}"</script>
+        <script src="{{url_for('static', filename='js/stars.js')}}"></script>
+        <script src="{{url_for('static', filename='js/style-icons.js')}}"></script>
+
+        <script>
+            isDay( {{data['is_day'] }}, '.moon-sun', '.data-container')
+            changeTemp( {{data['temp_c']}}, {{data['temp_f']}}, '#temp-c','#temp-f')
+        </script>
+    </body>
+
+</html>
