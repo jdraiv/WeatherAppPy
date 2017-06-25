@@ -1,0 +1,15 @@
+/* Star animation */
+
+.star{
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.star {
+  animation: blinker 5s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0.2; }
+}

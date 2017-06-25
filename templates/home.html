@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
         <!-- Css -->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/stars.css') }}">
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/home.css') }}">
 
 
@@ -48,7 +49,7 @@
         <script src="{{url_for('static', filename='js/style-icons.js')}}"></script>
 
         <script>
-            isDay( {{data['is_day'] }}, '.moon-sun', '.data-container')
+            isDay({{data['is_day']}}, '.moon-sun', '.data-container')
             changeTemp( {{data['temp_c']}}, {{data['temp_f']}}, '#temp-c','#temp-f')
         </script>
     </body>

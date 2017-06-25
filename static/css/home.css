@@ -1,7 +1,4 @@
 
-/*
-#37253D
-*/
 body {
 	padding: 0;
 	margin: 0;
@@ -31,18 +28,6 @@ body {
 	-webkit-border-radius: 50%;
     -moz-border-radius: 50%;
 	border-radius: 50%;
-}
-
-/* Star animation */
-
-.star{
-    position: absolute;
-    border-radius: 50%;
-    background-color: white;
-}
-
-.star {
-  animation: blinker 5s linear infinite;
 }
 
 #region{
@@ -79,10 +64,6 @@ body {
 
 .extra-data{
 	font-size: 0.8em;
-}
-
-@keyframes blinker {  
-  50% { opacity: 0.2; }
 }
 
 /*Details */

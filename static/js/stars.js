@@ -25,7 +25,6 @@ function killTheDarkness(){
 }
 
 function drawStars(){
-
     var stars = 0;
     while(stars < 35){
         killTheDarkness();
