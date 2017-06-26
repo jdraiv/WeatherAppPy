@@ -9,7 +9,7 @@ def homepage(data = None):
 
 	ip = request.access_route[0]
 
-	url =  requests.get('http://ipinfo.io/%s/json' % (ip))
+	url =  requests.get('http://ip-api.com/json/%s' % (ip))
 
 	data = url.json()
 	city = data['city']
