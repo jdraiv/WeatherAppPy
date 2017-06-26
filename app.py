@@ -1,13 +1,17 @@
 import requests
 import helpers
 
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 app = Flask(__name__)
 
 @app.route('/')
 def homepage(data = None):
 
-	url =  requests.get('http://ipinfo.io/json')
+	ip_url = requests.get('http://httpbin.org/ip')
+	ip_data = ip_url.json()
+	ip = ip_data['origin']
+
+	url =  requests.get('http://ipinfo.io/%s/json' % (ip))
 
 	data = url.json()
 	city = data['city']
@@ -22,6 +26,8 @@ def homepage(data = None):
 @app.errorhandler(404)
 def page_not_found(e):
     return redirect(url_for('homepage'))
+
+
 
 
 
