@@ -7,9 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def homepage(data = None):
 
-	ip_url = requests.get('http://httpbin.org/ip')
-	ip_data = ip_url.json()
-	ip = ip_data['origin']
+	ip = request.access_route[0]
 
 	url =  requests.get('http://ipinfo.io/%s/json' % (ip))
 
@@ -22,6 +20,7 @@ def homepage(data = None):
 	d = helpers.get_weather_data(weather_data)
 
 	return render_template('home.html', data = d)
+
 
 @app.errorhandler(404)
 def page_not_found(e):
