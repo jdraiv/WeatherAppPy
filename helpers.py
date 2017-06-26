@@ -1,9 +1,4 @@
 
-
-def round_number(num):
-	num = round(num)
-	return num
-
 def time_conversion(h):
 	import time
 	import datetime
@@ -44,7 +39,7 @@ def get_weather_data(data):
 
 		if key2 in keys:
 			if key2 == 'temp_c' or key2 == 'temp_f':
-				value2 = round_number(int(value2))
+				value2 = round(int(value2))
 			results[key2] = value2
 	return results
 
