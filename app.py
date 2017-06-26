@@ -1,7 +1,7 @@
 import requests
 import helpers
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,6 +18,10 @@ def homepage(data = None):
 	d = helpers.get_weather_data(weather_data)
 
 	return render_template('home.html', data = d)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return redirect(url_for('homepage'))
 
 
 

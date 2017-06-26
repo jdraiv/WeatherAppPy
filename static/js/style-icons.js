@@ -7,9 +7,9 @@ function isDay(num, celestialBody, sky){
 		$(sky).css('background-color', '#1768B5');
 	}
 	else if (num == 0){
-		drawStars();
 		$(celestialBody).css('background-color', 'white');
 		$(sky).css('background-color', '#141726');
+		drawStars();
 	}
 	
 }

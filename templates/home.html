@@ -45,9 +45,10 @@
             <h1 class="extra-data" id="winds">Winds KPH: {{ data['wind_kph'] }}</h1>
 
         </div>
-        <script src="{{url_for('static', filename='js/change-temp.js')}}"</script>
+        <!-- -->
         <script src="{{url_for('static', filename='js/stars.js')}}"></script>
         <script src="{{url_for('static', filename='js/style-icons.js')}}"></script>
+        <script src="{{url_for('static', filename='js/change-temp.js')}}"></script>
 
         <script>
             isDay({{data['is_day']}}, '.moon-sun', '.data-container')

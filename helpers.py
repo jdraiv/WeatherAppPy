@@ -21,7 +21,6 @@ def time_conversion(h):
 def get_weather_data(data):
 
 	keys = ['name', 'country', 'temp_c', 'temp_f', 'text', 'is_day','wind_kph', 'localtime']
-	print(keys)
 
 	location = data['location']
 	current  = data['current']
